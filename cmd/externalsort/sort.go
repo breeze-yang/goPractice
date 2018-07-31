@@ -1,10 +1,10 @@
 package main
 
 import (
-	"os"
-	"goPractice/pipeline"
 	"bufio"
 	"fmt"
+	"goPractice/pipeline"
+	"os"
 )
 
 func main() {
@@ -14,7 +14,7 @@ func main() {
 }
 
 func printFile(filename string) {
-	file,  err := os.Open(filename)
+	file, err := os.Open(filename)
 	if err != nil {
 		panic(err)
 	}
@@ -53,7 +53,7 @@ func createPipeline(filename string, fileSize, chunkCount int) <-chan int {
 			panic(err)
 		}
 
-		file.Seek(int64(i * chunkSize), 0)
+		file.Seek(int64(i*chunkSize), 0)
 
 		source := pipeline.ReaderSource(
 			bufio.NewReader(file), chunkSize)

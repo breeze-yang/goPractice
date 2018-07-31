@@ -1,15 +1,16 @@
 package pipeline
 
 import (
-	"sort"
-	"io"
 	"encoding/binary"
-	"math/rand"
-	"time"
 	"fmt"
+	"io"
+	"math/rand"
+	"sort"
+	"time"
 )
 
 var startTime time.Time
+
 func Init() {
 	startTime = time.Now()
 }

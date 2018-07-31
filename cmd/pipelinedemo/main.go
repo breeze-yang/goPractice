@@ -1,13 +1,13 @@
 package main
 
 import (
-	"goPractice/pipeline"
-	"fmt"
-	"os"
 	"bufio"
+	"fmt"
+	"goPractice/pipeline"
+	"os"
 )
 
-func main(){
+func main() {
 	const filename = "large.in"
 	const n = 100000000
 	file, err := os.Create(filename)
@@ -43,7 +43,7 @@ func mergeDemo() {
 	p := pipeline.Merge(
 		pipeline.InMemSort(arr1),
 		pipeline.InMemSort(arr2),
-		)
+	)
 	for v := range p {
 		fmt.Println(v)
 	}
